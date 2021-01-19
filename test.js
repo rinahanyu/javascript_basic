@@ -122,3 +122,33 @@ for (let i = 1; i <= 100; i++) {
     console.log(i);
   }
 }
+
+// オブジェクト
+const blueMeaning = '進め';
+const yellowMeaning = '基本は止まれ';
+const redMeaning = '止まれ';
+const trafficLight = {
+  blue: blueMeaning,
+  yellow: yellowMeaning,
+  red: redMeaning,
+};
+console.log(trafficLight);
+
+const blue = '進め';
+const yellow = '基本は止まれ';
+const red = '止まれ';
+const trafficLight1 = {
+  blue,
+  yellow,
+  red,
+};
+console.log(trafficLight1);
+
+const person = {
+  name: '桃太郎',
+  age: 7,
+};
+let key = 'name';
+console.log(person[key]); // コンソールに「桃太郎」と表示される
+key = 'age';
+console.log(person[key]); // コンソールに「7」と表示される
