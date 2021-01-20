@@ -152,3 +152,68 @@ let key = 'name';
 console.log(person[key]); // コンソールに「桃太郎」と表示される
 key = 'age';
 console.log(person[key]); // コンソールに「7」と表示される
+
+// const person = {
+//   name: '桃太郎',
+//   age: 7,
+// };
+// const nickname = 'name';
+// console.log(person.nickname); // コンソールに「undefined」と表示される
+// ドット記法では変数を使ってプロパティにアクセスすることはできない
+
+const person1 = {
+  name: '桃太郎',
+  age: 7,
+};
+const personName = person1.name;
+console.log(personName); // コンソールに「桃太郎」と表示される
+
+const person2 = {
+  name: '桃太郎',
+  age: 7,
+};
+person2.enemy = '鬼';// プロパティの追加
+console.log(person2);
+
+const person3 = {
+  name: '桃太郎',
+  age: 7,
+};
+console.log(person3);
+delete person3.age; // プロパティの削除
+console.log('ageプロパティを削除した後：', person3);
+
+const person4 = {
+  name: '桃太郎',
+  greet: function() {
+    console.log('こんにちは！');
+  },
+};
+person4.greet(); // greetメソッドを呼び出す
+
+// 練習
+const animal = {
+  name: '犬',
+  voice: 'ワン！',
+  bark() {
+    console.log(`${this.name}は${this.voice}と鳴く`);
+  },
+};
+animal.bark();
+
+// 非同期処理
+console.log(setTimeout(() => {
+  console.log('呼んだ？');
+}, 1000));
+console.log(setTimeout(() => {
+  console.log('呼んだ？');
+}, 1000));
+console.log(setTimeout(() => {
+  console.log('呼んだ？');
+}, 1000)); // それぞれの戻り値が最初に表示される
+
+console.log('A');
+setTimeout(() => {
+  console.log('B');
+}, 0);
+console.log('C'); // setTimeoutは、設定値が０でも最後に処理される（非同期処理）
