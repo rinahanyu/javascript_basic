@@ -1,0 +1,89 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Test</title>
+  </head>
+  <body>
+    <div id="box"></div>
+    <button type="button" id="my-button">押して!</button>
+    <script src="test2.js"></script>
+  </body>
+</html> -->
+
+<!-- -------------------------------------------------- -->
+
+<!-- <!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Test</title>
+    <style>
+      #box {
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        background-color: #ccc;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <select id="my-select">
+      <option value="1">Item 1</option>
+      <option value="2">Item 2</option>
+      <option value="3">Item 3</option>
+    </select> -->
+    <!-- <form id="my-form">
+      <input type="text" id="input-word">
+      <input type="submit" value="送信">
+    </form> -->
+    <!-- <a id="my-link" href="https://techacademy.jp/">
+      TechAcademy [テックアカデミー] | オンラインのプログラミングスクール
+    </a>
+    <script src="test2.js"></script>
+  </body>
+</html> -->
+
+<!-- -------------------------------------------------- -->
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>イベントのバブリング</title>
+    <style>
+      #parent {
+        position: relative; /* 子要素の絶対的な位置指定で、親要素が基準となるようにする */
+        width: 200px;
+        height: 200px;
+        background-color: #ccffcc;
+      }
+
+      #child {
+        /* 中央寄せにする */
+        position: absolute; /* position: relative;を指定した親要素を基準として、絶対的な位置を指定する */
+        top: 50%; /* topを親要素の中央位置にする */
+        left: 50%; /* leftを親要素の中央位置にする */
+        transform: translate(-50%, -50%); /* 自分自身の高さと幅の半分だけ、上と左にずらす*/
+
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        background-color: #ffccff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      親要素
+      <div id="child">
+        子要素
+      </div>
+    </div>
+
+    <script src="test2.js"></script>
+  </body>
+</html>
