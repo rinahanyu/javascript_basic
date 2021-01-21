@@ -217,3 +217,35 @@ setTimeout(() => {
   console.log('B');
 }, 0);
 console.log('C'); // setTimeoutは、設定値が０でも最後に処理される（非同期処理）
+
+
+// Arrayオブジェクト
+const members = ['桃太郎', 'イヌ', 'サル', 'キジ'];
+function addRespect(member) {
+    console.log(member + 'さん');
+}
+members.forEach(addRespect);
+members.forEach((member) => {
+  console.log(`${member}さん`);
+}); // forEachで繰り返しの表示
+
+function addRespect1(member) {
+  return `${member}さん`;
+}
+const greatMembers = members.map(addRespect1);
+console.log(greatMembers); // mapで新しい配列を作成
+
+const dogs = ['柴犬', 'チワワ', 'トイプードル'];
+const cats = ['ペルシャ', 'ロシアンブルー', 'シャム'];
+const pets = dogs.concat(cats);
+console.log(pets); //concatによる配列の連結
+
+const pets2 = [];
+pets2.push(dogs);
+pets2.push(cats);
+console.log(pets2); //pushにより、それぞれの配列のまま連結
+
+const pets3 = [];
+pets3.push(...dogs);
+pets3.push(...cats);
+console.log(pets3); //スプレッド構文により、展開して一つの配列にする
