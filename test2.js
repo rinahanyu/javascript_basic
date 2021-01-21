@@ -81,13 +81,155 @@
 
 // --------------------------------------------------
 
-// バブリングフェーズ（イベントが上位の要素へと伝わる段階）
-const parent = document.getElementById('parent');
-const child = document.getElementById('child');
+// -バブリングフェーズ（イベントが上位の要素へと伝わる段階）
+// const parent = document.getElementById('parent');
+// const child = document.getElementById('child');
 
-parent.addEventListener('click', () => {
-  console.log('親要素のイベントリスナー');
+// parent.addEventListener('click', () => {
+//   console.log('親要素のイベントリスナー');
+// });
+// child.addEventListener('click', () => {
+//   console.log('子要素のイベントリスナー');
+// });
+
+// --------------------------------------------------
+
+// -ボタン
+// const button = document.getElementById('my-button');
+// const box = document.getElementById('box');
+
+// button.addEventListener('click', () => {
+//   box.innerHTML += 'どん！<br>';
+// });
+// ※testContentとの違いは、``内を文字列として処理されるか、HTMlとして処理されるか
+// ※A += B は、 A = A + B を省略した書き方。文字列と一緒に使った場合は、A の既存の内容を消さずに B を後ろに追加する。
+
+// --------------------------------------------------
+
+// フォームに入力された値を受け取る
+// const button = document.getElementById('button-greeting');
+// const input = document.getElementById('name');
+// const box = document.getElementById('box');
+
+// button.addEventListener('click', () => {
+//   const name = input.value;
+//   box.textContent = `こんにちは、${name}さん`;
+// });
+
+// --------------------------------------------------
+
+// if文で表示内容の切替
+// 複数のボタンをつける
+// 関数を作る
+// const button = document.getElementById('button-greeting');
+// const buttonCheerful = document.getElementById('button-cheerful');
+// const input = document.getElementById('name');
+// const box = document.getElementById('box');
+
+// const greet = () => {
+//   let greeting;
+//   const hour = new Date().getHours();
+
+//   if (hour >= 6 && hour < 12) {
+//     greeting = 'おはよう';
+//   } else if (hour >= 12 && hour < 18) {
+//     greeting = 'こんにちは';
+//   } else {
+//     greeting = 'こんばんは';
+//   }
+
+//   return greeting;
+// };
+
+// button.addEventListener('click', () => {
+//   const name = input.value;
+//   const greeting = greet();
+
+//   // ------------以下をまとめて、greet関数作成----------------
+//   // const hour = new Date().getHours();
+//   // let greeting;
+
+//   // console.log(`現在の時間：${hour}時`);
+
+//   // if (hour >= 6 && hour < 12) {
+//   //   greeting = 'おはよう';
+//   // } else if (hour >= 12 && hour < 18) {
+//   //   greeting = 'こんにちは';
+//   // } else {
+//   //   greeting = 'こんばんは';
+//   // }
+//   // -----------------------------------------
+
+//   box.textContent = `${greeting}、${name}さん`;
+// });
+
+// buttonCheerful.addEventListener('click', () => {
+//   const name = input.value;
+//   const greeting = greet();
+
+//   // ------------以下をまとめて、greet関数作成----------------
+//   // const hour = new Date().getHours();
+//   // let greeting;
+
+//   // console.log(`現在の時間：${hour}時`);
+
+//   // if (hour >= 6 && hour < 12) {
+//   //   greeting = 'おはよう';
+//   // } else if (hour >= 12 && hour < 18) {
+//   //   greeting = 'こんにちは';
+//   // } else {
+//   //   greeting = 'こんばんは';
+//   // }
+//   // -----------------------------------------
+
+//   box.textContent = `${greeting}！、${name}さん！！！`;
+// });
+
+// --------------------------------------------------
+
+// 処理を遅らせて実行
+const buttonGreeting = document.getElementById('button-greeting');
+const buttonCheerful = document.getElementById('button-cheerful');
+const buttonLate = document.getElementById('button-late');
+
+const input = document.getElementById('name');
+const box = document.getElementById('box');
+
+const greet = () => {
+  let greeting;
+  const hour = new Date().getHours();
+
+  if (hour >= 6 && hour < 12) {
+    greeting = 'おはよう';
+  } else if (hour >= 12 && hour < 18) {
+    greeting = 'こんにちは';
+  } else {
+    greeting = 'こんばんは';
+  }
+
+  return greeting;
+};
+
+buttonGreeting.addEventListener('click', () => {
+  const name = input.value;
+  const greeting = greet();
+
+  box.textContent = `${greeting}、${name}さん`;
 });
-child.addEventListener('click', () => {
-  console.log('子要素のイベントリスナー');
+
+buttonCheerful.addEventListener('click', () => {
+  const name = input.value;
+  const greeting = greet();
+
+  box.textContent = `${greeting}！、${name}さん！！！`;
 });
+
+buttonLate.addEventListener('click', () => {
+  const name = input.value;
+
+  setTimeout(() => {
+    // 1秒経過した後に実行される
+    box.textContent = `遅れてごめん、${name}さん`;
+  }, 1000);
+});
+
