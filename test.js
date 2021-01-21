@@ -266,3 +266,13 @@ Object.keys(person).forEach((key) => {
   console.log(person[key]);
 });
 
+
+// Stringオブジェクト
+
+// -sliceメソッド
+const name_momo = '桃太郎さん';
+console.log(name_momo.slice(1, 3));
+console.log(name_momo.slice(1)); // 終わりの指定がなければ、最後まで指定される
+console.log(name_momo.slice(-2));
+
+
