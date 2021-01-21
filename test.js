@@ -249,3 +249,20 @@ const pets3 = [];
 pets3.push(...dogs);
 pets3.push(...cats);
 console.log(pets3); //スプレッド構文により、展開して一つの配列にする
+
+
+// Objectオブジェクト
+
+// -Object.kesメソッド（配列のプロパティのみを抽出して配列）
+const personProperties = Object.keys(person);
+console.log(personProperties);
+
+// -person[key]を使用して、プロパティの値を抽出
+personProperties.forEach((key) => {
+  console.log(person[key]);
+});
+
+Object.keys(person).forEach((key) => {
+  console.log(person[key]);
+});
+
