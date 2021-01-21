@@ -188,48 +188,92 @@
 // --------------------------------------------------
 
 // 処理を遅らせて実行
-const buttonGreeting = document.getElementById('button-greeting');
-const buttonCheerful = document.getElementById('button-cheerful');
-const buttonLate = document.getElementById('button-late');
+// const buttonGreeting = document.getElementById('button-greeting');
+// const buttonCheerful = document.getElementById('button-cheerful');
+// const buttonLate = document.getElementById('button-late');
 
-const input = document.getElementById('name');
-const box = document.getElementById('box');
+// const input = document.getElementById('name');
+// const box = document.getElementById('box');
 
-const greet = () => {
-  let greeting;
-  const hour = new Date().getHours();
+// const greet = () => {
+//   let greeting;
+//   const hour = new Date().getHours();
 
-  if (hour >= 6 && hour < 12) {
-    greeting = 'おはよう';
-  } else if (hour >= 12 && hour < 18) {
-    greeting = 'こんにちは';
-  } else {
-    greeting = 'こんばんは';
-  }
+//   if (hour >= 6 && hour < 12) {
+//     greeting = 'おはよう';
+//   } else if (hour >= 12 && hour < 18) {
+//     greeting = 'こんにちは';
+//   } else {
+//     greeting = 'こんばんは';
+//   }
 
-  return greeting;
-};
+//   return greeting;
+// };
 
-buttonGreeting.addEventListener('click', () => {
-  const name = input.value;
-  const greeting = greet();
+// buttonGreeting.addEventListener('click', () => {
+//   const name = input.value;
+//   const greeting = greet();
 
-  box.textContent = `${greeting}、${name}さん`;
-});
+//   box.textContent = `${greeting}、${name}さん`;
+// });
 
-buttonCheerful.addEventListener('click', () => {
-  const name = input.value;
-  const greeting = greet();
+// buttonCheerful.addEventListener('click', () => {
+//   const name = input.value;
+//   const greeting = greet();
 
-  box.textContent = `${greeting}！、${name}さん！！！`;
-});
+//   box.textContent = `${greeting}！、${name}さん！！！`;
+// });
 
-buttonLate.addEventListener('click', () => {
-  const name = input.value;
+// buttonLate.addEventListener('click', () => {
+//   const name = input.value;
 
-  setTimeout(() => {
-    // 1秒経過した後に実行される
-    box.textContent = `遅れてごめん、${name}さん`;
-  }, 1000);
-});
+//   setTimeout(() => {
+//     // 1秒経過した後に実行される
+//     box.textContent = `遅れてごめん、${name}さん`;
+//   }, 1000);
+// });
 
+// --------------------------------------------------
+
+// ループ（繰り返し処理）
+// const box = document.getElementById('box');
+
+// // 10回繰り返す
+// for (let i = 1; i <= 10; i++) {
+//   box.innerHTML += `${i}<br>`;
+// }
+
+// --------------------------------------------------
+
+// ランダム要素
+// const button = document.getElementById('my-button');
+// const box = document.getElementById('box');
+
+// button.addEventListener('click', () => {
+//   // 0以上1未満のランダムな数値をnum変数に代入する
+//   const num = Math.random();
+
+//   if (num >= 0.5) {
+//     // numが0.5以上の場合
+//     box.innerHTML = `${num}<br>当たり！`;
+//   } else {
+//     // numが0.5未満の場合
+//     box.innerHTML = `${num}<br>ハズレ…`;
+//   }
+// });
+
+// --------------------------------------------------
+
+// フォームの入力を受け取って足し算
+// const buttonAdd = document.getElementById('button-add');
+// const box = document.getElementById('box');
+// const num1 = document.getElementById('num1');
+// const num2 = document.getElementById('num2');
+
+// buttonAdd.addEventListener('click', () => {
+//   // const result = num1.value + num2.value;
+//   const numberNum1 = Number.parseFloat(num1.value); //文字列から数値へ
+//   const numberNum2 = Number.parseFloat(num2.value);
+//   const result = numberNum1 + numberNum2;
+//   box.textContent = result;
+// });
