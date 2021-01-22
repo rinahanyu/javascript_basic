@@ -13,6 +13,8 @@
 // -----------------------------------------------
 
 // 電卓
+
+// 各種定義
 const buttonAdd = document.getElementById(`button-add`);
 const buttonSub = document.getElementById(`button-sub`);
 const buttonMul = document.getElementById(`button-mul`);
@@ -32,8 +34,8 @@ const getNum2 = () => {
 
 // 計算後の値の表示
 const showResult = (num) => {
-  box.textContent = num
-};
+  document.getElementById('box').textContent = num;
+}; //innerHTMLでも代替可
 
 // 足し算
 buttonAdd.addEventListener(`click`, () => {
